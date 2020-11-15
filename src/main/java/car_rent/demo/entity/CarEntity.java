@@ -14,6 +14,11 @@ public class CarEntity {
     private String carBrand;
     private String carModel;
     private String carType;
+    private String carProductionYear;
+    private String carColor;
+    private Integer carMileage;
+    private String status;
+    private Integer perDayCost;
 
     public String getCarModel() {
         return carModel;
@@ -54,12 +59,6 @@ public class CarEntity {
     public void setCarMileage(Integer carMileage) {
         this.carMileage = carMileage;
     }
-
-    private String carProductionYear;
-    private String carColor;
-    private Integer carMileage;
-    private String status;
-    private Integer perDayCost;
 
     public Integer getId() {
         return id;
