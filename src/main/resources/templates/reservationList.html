@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista rezerwacji</title>
+</head>
+<body>
+<h1>Lista rezerwacji</h1>
+<table>
+    <tr th:each="reservation : ${reservationList}">
+        <td th:text="${reservation.reservationCreateDate}" />
+        <td th:text="${reservation.reservationDateStart}" />
+        <td th:text="${reservation.reservationDateEnd}" />
+        <td th:text="${reservation.clientId}" />
+        <td th:text="${reservation.carId}" />
+        <td th:text="${reservation.reservationCost}" />
+    </tr>
+</table>
+
+</body>
+</html>
