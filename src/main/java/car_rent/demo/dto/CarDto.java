@@ -1,7 +1,7 @@
 package car_rent.demo.dto;
 
 //to co przesyłamy między entity a uzytkownikiem
-public class CarRentalDto {
+public class CarDto {
     private String carBrand;
     private String status;
     private Integer perDayCost;
