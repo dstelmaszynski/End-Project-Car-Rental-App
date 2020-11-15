@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowa reserwacja</title>
+</head>
+<body>
+<h1>Nowa rezerwacja</h1>
+
+<form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
+
+    <div>
+        <input type="text" name="reservationCreateDate" placeholder="Data rezerwacji" />
+    </div>
+
+    <div>
+        <input type="text" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" />
+    </div>
+    <div>
+        <input type="text" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" />
+    </div>
+
+    <div>
+        <input type="text" name="clientId" placeholder="Id klienta" />
+    </div>
+
+    <div>
+        <input type="text" name="carId" placeholder="Id samochodu" />
+    </div>
+
+    <div>
+        <input type="text" name="reservationCost" placeholder="Koszt rezerwacji" />
+    </div>
+
+
+        <input type="submit" value="Zapisz">
+</form>
+</body>
+</html>
