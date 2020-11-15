@@ -1,8 +1,9 @@
 package car_rent.demo.mapper;
-
 import car_rent.demo.dto.CarRentalDto;
 import car_rent.demo.entity.CarEntity;
 
+
+//mapowanie obiektu Car do dto
 public class CarMapper {
 
     public static CarRentalDto mapEntityToDto(CarEntity entity){
