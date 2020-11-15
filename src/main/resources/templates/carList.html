@@ -9,8 +9,13 @@
 <table>
     <tr th:each="car : ${carList}">
         <td th:text="${car.carBrand}" />
-        <td th:text="${car.perDayCost}" />
+        <td th:text="${car.carModel}" />
+        <td th:text="${car.carType}" />
+        <td th:text="${car.carProductionYear}" />
+        <td th:text="${car.carColor}" />
+        <td th:text="${car.carMileage}" />
         <td th:text="${car.status}" />
+        <td th:text="${car.perDayCost}" />
     </tr>
 </table>
 
