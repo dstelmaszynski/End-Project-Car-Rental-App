@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowy Samochód</title>
+</head>
+<body>
+<h1>Nowy samochód</h1>
+
+<form role="form" th:object="${car}" th:action="@{/car/add}" method="post">
+
+    <div>
+        <input type="text" name="carBrand" placeholder="Marka samochodu" />
+    </div>
+
+    <div>
+        <input type="text" name="status" placeholder="Status samochodu" />
+    </div>
+    <div>
+        <input type="text" name="perDayCost" placeholder="cena na dzień" />
+    </div>
+
+
+    <input type="submit" value="Zapisz">
+</form>
+</body>
+</html>
