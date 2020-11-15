@@ -1,12 +1,8 @@
 package car_rent.demo.service;
 
-import car_rent.demo.dto.CarDto;
 import car_rent.demo.dto.ReservationDto;
-import car_rent.demo.entity.CarEntity;
 import car_rent.demo.entity.ReservationEntity;
-import car_rent.demo.mapper.CarMapper;
 import car_rent.demo.mapper.ReservationMapper;
-import car_rent.demo.repository.CarRepository;
 import car_rent.demo.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
