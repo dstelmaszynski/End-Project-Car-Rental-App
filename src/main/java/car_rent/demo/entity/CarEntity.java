@@ -20,6 +20,22 @@ public class CarEntity {
     private String status;
     private Integer perDayCost;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
     public String getCarModel() {
         return carModel;
     }
@@ -58,22 +74,6 @@ public class CarEntity {
 
     public void setCarMileage(Integer carMileage) {
         this.carMileage = carMileage;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getCarBrand() {
-        return carBrand;
-    }
-
-    public void setCarBrand(String carBrand) {
-        this.carBrand = carBrand;
     }
 
     public String getStatus() {

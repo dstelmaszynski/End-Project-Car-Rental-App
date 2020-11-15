@@ -15,6 +15,11 @@ public class CarMapper {
         dto.setCarBrand(entity.getCarBrand());
         dto.setStatus(entity.getStatus());
         dto.setPerDayCost(entity.getPerDayCost());
+        dto.setCarColor(entity.getCarColor());
+        dto.setCarMileage(entity.getCarMileage());
+        dto.setCarModel(entity.getCarModel());
+        dto.setCarProductionYear(entity.getCarProductionYear());
+        dto.setCarType(entity.getCarType());
         return dto;
     }
 
@@ -36,6 +41,11 @@ public class CarMapper {
         entity.setCarBrand(dto.getCarBrand());
         entity.setPerDayCost(dto.getPerDayCost());
         entity.setStatus(dto.getStatus());
+        entity.setCarColor(dto.getCarColor());
+        entity.setCarMileage(dto.getCarMileage());
+        entity.setCarModel(dto.getCarModel());
+        entity.setCarProductionYear(dto.getCarProductionYear());
+        entity.setCarType(dto.getCarType());
         return entity;
     }
 }
