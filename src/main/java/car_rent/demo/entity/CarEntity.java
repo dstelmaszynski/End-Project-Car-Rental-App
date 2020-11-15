@@ -10,7 +10,7 @@ public class CarEntity {
     @Id
     @GeneratedValue
     @NotNull
-    private Integer id;
+    private Integer carId;
     private String carBrand;
     private String carModel;
     private String carType;
@@ -20,12 +20,12 @@ public class CarEntity {
     private String status;
     private Integer perDayCost;
 
-    public Integer getId() {
-        return id;
+    public Integer getCarId() {
+        return carId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCarId(Integer id) {
+        this.carId = id;
     }
 
     public String getCarBrand() {
