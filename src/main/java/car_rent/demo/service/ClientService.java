@@ -24,7 +24,7 @@ public class ClientService {
         return dtos;
     }
 
-    public ClientDto createReservation(ClientDto dto) {
+    public ClientDto createClient(ClientDto dto) {
         try {
             ClientEntity entity = ClientMapper.mapDtoToClient(dto);
 
