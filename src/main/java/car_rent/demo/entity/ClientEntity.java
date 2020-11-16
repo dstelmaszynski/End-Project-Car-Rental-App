@@ -11,18 +11,18 @@ public class ClientEntity {
     @Id
     @GeneratedValue
     @NotNull
-    private Integer id;
+    private Integer clientId;
     private String clientVorname;
     private String clientSurname;
     private String clientAddress;
     private String clientEmail;
 
-    public Integer getId() {
-        return id;
+    public Integer getClientId() {
+        return clientId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
     }
 
     public String getClientVorname() {
