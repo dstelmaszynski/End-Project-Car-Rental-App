@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>nowy klient</title>
+</head>
+<body>
+<h1>Nowy klient</h1>
+
+<form role="form" th:object="${client}" th:action="@{/client/add}" method="post">
+
+    <div>
+        <input type="text" name="clientVorname" placeholder="Imię klienta" />
+    </div>
+
+    <div>
+        <input type="text" name="clientSurname" placeholder="Nazwisko klienta" />
+    </div>
+    <div>
+        <input type="text" name="clientAddress" placeholder="Adres klienta" />
+    </div>
+
+    <div>
+        <input type="text" name="clientEmail" placeholder="Adres e-mail klienta" />
+    </div>
+
+    <input type="submit" value="Zapisz">
+</form>
+</body>
+</html>
