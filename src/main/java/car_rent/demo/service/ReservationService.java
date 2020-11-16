@@ -7,6 +7,7 @@ import car_rent.demo.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -25,6 +26,8 @@ public class ReservationService {
         try {
             ReservationEntity entity = ReservationMapper.mapDtoToRes(dto);
 
+            //dodanie nowej daty
+            entity.setReservationCreateDate(new Date());
             entity = reservationRepository.save(entity);
             return  ReservationMapper.mapResToDto(entity);
         } catch (Exception e) {

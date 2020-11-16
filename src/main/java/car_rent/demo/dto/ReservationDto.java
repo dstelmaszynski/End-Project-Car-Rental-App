@@ -3,34 +3,37 @@ package car_rent.demo.dto;
 import java.util.Date;
 
 public class ReservationDto {
-    private Date reservationCreateDate;
-    private Date reservationDateStart;
-    private Date reservationDateEnd;
+    //typ zmieniony z Date na String
+    private String reservationCreateDate;
+    //typ zmieniony z Date na String
+    private String reservationDateStart;
+    //typ zmieniony z Date na String
+    private String reservationDateEnd;
     private Integer clientId;
     private Integer carId;
     private Integer reservationCost;
 
-    public Date getReservationCreateDate() {
+    public String getReservationCreateDate() {
         return reservationCreateDate;
     }
 
-    public void setReservationCreateDate(Date reservationCreateDate) {
+    public void setReservationCreateDate(String reservationCreateDate) {
         this.reservationCreateDate = reservationCreateDate;
     }
 
-    public Date getReservationDateStart() {
+    public String getReservationDateStart() {
         return reservationDateStart;
     }
 
-    public void setReservationDateStart(Date reservationDateStart) {
+    public void setReservationDateStart(String reservationDateStart) {
         this.reservationDateStart = reservationDateStart;
     }
 
-    public Date getReservationDateEnd() {
+    public String getReservationDateEnd() {
         return reservationDateEnd;
     }
 
-    public void setReservationDateEnd(Date reservationDateEnd) {
+    public void setReservationDateEnd(String reservationDateEnd) {
         this.reservationDateEnd = reservationDateEnd;
     }
 

@@ -2,9 +2,7 @@ package car_rent.demo.entity;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,6 +14,8 @@ public class ReservationEntity {
     @GeneratedValue
     @NotNull
     private Integer reservationId;
+
+//    @Temporal(TemporalType.DATE)
     private Date reservationCreateDate;
     private Date reservationDateStart;
     private Date reservationDateEnd;
