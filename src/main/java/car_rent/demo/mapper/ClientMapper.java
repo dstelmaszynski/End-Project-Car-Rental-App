@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ClientMapper {
 
-    public static ClientDto mapEntityToDto(ClientEntity entity){
+    public static ClientDto mapClientToDto(ClientEntity entity){
         ClientDto dto = new ClientDto();
         dto.setClientVorname(entity.getClientVorname());
         dto.setClientSurname(entity.getClientSurname());
@@ -21,18 +21,18 @@ public class ClientMapper {
         return dto;
     }
 
-    public static List<ClientDto> mapEntityListToDtoList (Iterable<ClientEntity> entities) {
+    public static List<ClientDto> mapClientListToDtoList (Iterable<ClientEntity> entities) {
 
         List<ClientDto> dtos = new ArrayList<>();
 
         for (ClientEntity entity:entities) {
-            dtos.add(mapEntityToDto(entity));
+            dtos.add(mapClientToDto(entity));
 
         }
         return dtos;
     }
 
-    public static ClientEntity mapDtoToEntity(ClientDto dto) throws ParseException {
+    public static ClientEntity mapDtoToClient(ClientDto dto) throws ParseException {
 
         ClientEntity entity = new ClientEntity();
         entity.setClientVorname(dto.getClientVorname());
