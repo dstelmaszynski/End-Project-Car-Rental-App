@@ -53,3 +53,4 @@ public class CarDataLoader implements ApplicationRunner {
         carRepository.save(entity3);
     }
 }
+//TODO dodaje tylko jeden samochód na stronie

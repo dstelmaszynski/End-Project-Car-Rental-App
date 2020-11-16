@@ -43,3 +43,4 @@ public class ClientDataLoader implements ApplicationRunner {
     }
 
 }
+//TODO dodaje tylko jednego klienta na stronie
