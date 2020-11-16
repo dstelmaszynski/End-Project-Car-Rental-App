@@ -2,76 +2,40 @@ package car_rent.demo.dto;
 
 public class ClientDto {
 
-    private String carBrand;
-    private String carModel;
-    private String carType;
-    private String carProductionYear;
-    private String carColor;
-    private Integer carMileage;
-    private String status;
-    private Integer perDayCost;
+    private String clientVorname;
+    private String clientSurname;
+    private String clientAddress;
+    private String clientEmail;
 
-    public String getCarBrand() {
-        return carBrand;
+    public String getClientVorname() {
+        return clientVorname;
     }
 
-    public void setCarBrand(String carBrand) {
-        this.carBrand = carBrand;
+    public void setClientVorname(String clientVorname) {
+        this.clientVorname = clientVorname;
     }
 
-    public String getCarModel() {
-        return carModel;
+    public String getClientSurname() {
+        return clientSurname;
     }
 
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
+    public void setClientSurname(String clientSurname) {
+        this.clientSurname = clientSurname;
     }
 
-    public String getCarType() {
-        return carType;
+    public String getClientAddress() {
+        return clientAddress;
     }
 
-    public void setCarType(String carType) {
-        this.carType = carType;
+    public void setClientAddress(String clientAddress) {
+        this.clientAddress = clientAddress;
     }
 
-    public String getCarProductionYear() {
-        return carProductionYear;
+    public String getClientEmail() {
+        return clientEmail;
     }
 
-    public void setCarProductionYear(String carProductionYear) {
-        this.carProductionYear = carProductionYear;
-    }
-
-    public String getCarColor() {
-        return carColor;
-    }
-
-    public void setCarColor(String carColor) {
-        this.carColor = carColor;
-    }
-
-    public Integer getCarMileage() {
-        return carMileage;
-    }
-
-    public void setCarMileage(Integer carMileage) {
-        this.carMileage = carMileage;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Integer getPerDayCost() {
-        return perDayCost;
-    }
-
-    public void setPerDayCost(Integer perDayCost) {
-        this.perDayCost = perDayCost;
+    public void setClientEmail(String clientEmail) {
+        this.clientEmail = clientEmail;
     }
 }
