@@ -14,14 +14,14 @@ public class ReservationMapper {
     public static ReservationDto mapResToDto(ReservationEntity entity) {
         ReservationDto dto = new ReservationDto();
         dto.setReservationCost(entity.getReservationCost());
-        dto.setReservationCreateDate(new SimpleDateFormat("dd-MM-yyyy").format(entity.getReservationCreateDate()));
+        dto.setReservationCreateDate(new SimpleDateFormat("yyyy-MM-dd").format(entity.getReservationCreateDate()));
         //pattern musi być dd-MM-yyyy, szczególnie chodzi o MM, muszą być z dużych liter inaczej nie będzie działać
 //       dto.setReservationCreateDate(entity.getReservationCreateDate());
 
-        dto.setReservationDateStart(new SimpleDateFormat("dd-mm-yyyy").format(entity.getReservationDateStart()));
+        dto.setReservationDateStart(new SimpleDateFormat("yyyy-MM-dd").format(entity.getReservationDateStart()));
 //        dto.setReservationDateStart(entity.getReservationDateStart());
 
-        dto.setReservationDateEnd(new SimpleDateFormat("dd-mm-yyyy").format(entity.getReservationDateEnd()));
+        dto.setReservationDateEnd(new SimpleDateFormat("yyyy-MM-dd").format(entity.getReservationDateEnd()));
 //        dto.setReservationDateEnd(entity.getReservationDateEnd());
         dto.setClientId(entity.getClientId());
         dto.setCarId(entity.getCarId());
@@ -47,15 +47,15 @@ public class ReservationMapper {
         entity.setReservationCost(dto.getReservationCost());
 
         if (dto.getReservationCreateDate() != null) {
-            entity.setReservationCreateDate(new SimpleDateFormat("dd-MM-yyyy").parse(dto.getReservationCreateDate()));
+            entity.setReservationCreateDate(new SimpleDateFormat("yyyy-MM-dd").parse(dto.getReservationCreateDate()));
         }
         //pattern musi być dd-MM-yyyy, szczególnie chodzi o MM, muszą być z dużych liter inaczej nie będzie działać
 //        entity.setReservationCreateDate(dto.getReservationCreateDate());
 
-        entity.setReservationDateStart(new SimpleDateFormat("dd-mm-yyyy").parse(dto.getReservationDateStart()));
+        entity.setReservationDateStart(new SimpleDateFormat("yyyy-MM-dd").parse(dto.getReservationDateStart()));
 //        entity.setReservationDateStart(dto.getReservationDateStart());
 
-        entity.setReservationDateEnd(new SimpleDateFormat("dd-mm-yyyy").parse(dto.getReservationDateEnd()));
+        entity.setReservationDateEnd(new SimpleDateFormat("yyyy-MM-dd").parse(dto.getReservationDateEnd()));
 //        entity.setReservationDateEnd(dto.getReservationDateEnd());
         entity.setClientId(dto.getClientId());
         entity.setCarId(dto.getCarId());

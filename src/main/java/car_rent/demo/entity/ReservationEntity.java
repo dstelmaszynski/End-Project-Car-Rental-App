@@ -1,6 +1,7 @@
 package car_rent.demo.entity;
 
 import com.sun.istack.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -16,8 +17,11 @@ public class ReservationEntity {
     private Integer reservationId;
 
 //    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date reservationCreateDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date reservationDateStart;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date reservationDateEnd;
     private Integer clientId;
     private Integer carId;

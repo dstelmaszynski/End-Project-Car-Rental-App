@@ -10,14 +10,14 @@
 <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
 
     <div>
-        <input type="text" name="reservationCreateDate" placeholder="Data rezerwacji" />
+        <input type="date" name="reservationCreateDate" placeholder="Data rezerwacji" />
     </div>
 
     <div>
-        <input type="text" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" />
+        <input type="date" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" />
     </div>
     <div>
-        <input type="text" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" />
+        <input type="date" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" />
     </div>
 
     <div>
