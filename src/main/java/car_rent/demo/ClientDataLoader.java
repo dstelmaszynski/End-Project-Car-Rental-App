@@ -26,21 +26,20 @@ public class ClientDataLoader implements ApplicationRunner {
         clientRepository.save(entity);
 
         ClientEntity entity2 = new ClientEntity();
-        entity.setClientVorname("Patrycja");
-        entity.setClientSurname("Jarząbek");
-        entity.setClientAddress("ul.Marcinkowskiego 25, 61-015 Poznań,");
-        entity.setClientEmail("pj@o2.pl");
+        entity2.setClientVorname("Patrycja");
+        entity2.setClientSurname("Jarząbek");
+        entity2.setClientAddress("ul.Marcinkowskiego 25, 61-015 Poznań,");
+        entity2.setClientEmail("pj@o2.pl");
 
         clientRepository.save(entity2);
 
         ClientEntity entity3 = new ClientEntity();
-        entity.setClientVorname("Wiesław");
-        entity.setClientSurname("Dobrejmyśli");
-        entity.setClientAddress("ul.Podgórna 2, 61-002 Poznań,");
-        entity.setClientEmail("dobramysl@wp.pl");
+        entity3.setClientVorname("Wiesław");
+        entity3.setClientSurname("Dobrejmyśli");
+        entity3.setClientAddress("ul.Podgórna 2, 61-002 Poznań,");
+        entity3.setClientEmail("dobramysl@wp.pl");
 
         clientRepository.save(entity3);
     }
 
 }
-//TODO dodaje tylko jednego klienta na stronie

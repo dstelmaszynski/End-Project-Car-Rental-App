@@ -29,28 +29,27 @@ public class CarDataLoader implements ApplicationRunner {
         carRepository.save(entity);
 
         CarEntity entity2 = new CarEntity();
-        entity.setCarBrand("Mercedes");
-        entity.setCarModel("Klasa E");
-        entity.setCarType("Sedan");
-        entity.setCarProductionYear("2019");
-        entity.setCarColor("Czarny");
-        entity.setCarMileage(50000);
-        entity.setStatus("wolny");
-        entity.setPerDayCost(990);
+        entity2.setCarBrand("Mercedes");
+        entity2.setCarModel("Klasa E");
+        entity2.setCarType("Sedan");
+        entity2.setCarProductionYear("2019");
+        entity2.setCarColor("Czarny");
+        entity2.setCarMileage(50000);
+        entity2.setStatus("wolny");
+        entity2.setPerDayCost(990);
 
         carRepository.save(entity2);
 
         CarEntity entity3 = new CarEntity();
-        entity.setCarBrand("Ford");
-        entity.setCarModel("S-Max");
-        entity.setCarType("Van");
-        entity.setCarProductionYear("2019");
-        entity.setCarColor("Biały");
-        entity.setCarMileage(66000);
-        entity.setStatus("wolny");
-        entity.setPerDayCost(680);
+        entity3.setCarBrand("Ford");
+        entity3.setCarModel("S-Max");
+        entity3.setCarType("Van");
+        entity3.setCarProductionYear("2019");
+        entity3.setCarColor("Biały");
+        entity3.setCarMileage(66000);
+        entity3.setStatus("wolny");
+        entity3.setPerDayCost(680);
 
         carRepository.save(entity3);
     }
 }
-//TODO dodaje tylko jeden samochód na stronie
