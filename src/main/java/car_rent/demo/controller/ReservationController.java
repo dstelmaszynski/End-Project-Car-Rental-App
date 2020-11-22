@@ -25,8 +25,10 @@ public class ReservationController {
         return "reservationList";
     }
     @RequestMapping(value = "/reservation/add", method = RequestMethod.GET)
+    //request param podajesz pola do przesyłu http
     public String reservationCreate (Model model, @RequestParam String startDate, @RequestParam String endDate) {
        ReservationDto reservation = new ReservationDto();
+       //zdefiniowanie tych pól, setery na pobranie z http
        reservation.setReservationDateStart(startDate);
        reservation.setReservationDateEnd(endDate);
        model.addAttribute("reservation", reservation);

@@ -1,66 +1,114 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Nowa reserwacja</title>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
 <body>
-<h1>Nowa rezerwacja</h1>
 
-<form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
-
-    <div>
-        <input type="date" id="dateDefault" name="reservationCreateDate" placeholder="Data rezerwacji" />
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">WYPOŻYCZALNIA SAMOCHODÓW</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/reservation}">Rezerwacje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/client}">Klienci</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/car}">Auta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <div>
-        <input type="date" name="reservationDateStart" th:value="${reservation.reservationDateStart}"  placeholder="Data rozpoczęcia rezerwacji"  />
+<div class="container mt-4">
+    <h1>Rezerwacja</h1>
+    <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
 
-    </div>
+        <div>
+            <input type="date" id="dateDefault" name="reservationCreateDate" placeholder="Data rezerwacji"/>
+        </div>
 
-    <div>
-        <input type="date" name="reservationDateEnd"  th:value="${reservation.reservationDateEnd}" placeholder="Data zakończenia rezerwacji" />
-    </div>
+        <div>
+            <!--        podanie th:value czyli wskazanie na odpowiednie pole do przesyłu-->
+            <input type="date" name="reservationDateStart" th:value="${reservation.reservationDateStart}"
+                   placeholder="Data rozpoczęcia rezerwacji"/>
 
-    <div>
-        <input type="text" name="clientId" placeholder="Id klienta" />
-    </div>
+        </div>
 
-    <div>
-        <input type="text" name="carId" placeholder="Id samochodu" />
-    </div>
+        <div>
+            <input type="date" name="reservationDateEnd" th:value="${reservation.reservationDateEnd}"
+                   placeholder="Data zakończenia rezerwacji"/>
+        </div>
 
-    <div>
-        <input type="text" name="reservationCost" placeholder="Koszt rezerwacji" />
-    </div>
+        <div>
+            <input type="text" name="clientId" placeholder="Id klienta"/>
+        </div>
+
+        <div>
+            <input type="text" name="carId" placeholder="Id samochodu"/>
+        </div>
+
+        <div>
+            <input type="text" name="reservationCost" placeholder="Koszt rezerwacji"/>
+        </div>
 
 
         <input type="submit" value="Zapisz">
-</form>
+    </form>
 
-<!-- aktualna data rezerwacji-->
-<script>
-    function setInputDate(_id){
-        var _dat = document.querySelector(_id);
-        var hoy = new Date(),
-            d = hoy.getDate(),
-            m = hoy.getMonth()+1,
-            y = hoy.getFullYear(),
-            data;
 
-        if(d < 10){
-            d = "0"+d;
+</div>
+    <!-- aktualna data rezerwacji-->
+    <script>
+        function setInputDate(_id) {
+            var _dat = document.querySelector(_id);
+            var hoy = new Date(),
+                d = hoy.getDate(),
+                m = hoy.getMonth() + 1,
+                y = hoy.getFullYear(),
+                data;
+
+            if (d < 10) {
+                d = "0" + d;
+            }
+            ;
+            if (m < 10) {
+                m = "0" + m;
+            }
+            ;
+
+            data = y + "-" + m + "-" + d;
+            console.log(data);
+            _dat.value = data;
         };
-        if(m < 10){
-            m = "0"+m;
-        };
 
-        data = y+"-"+m+"-"+d;
-        console.log(data);
-        _dat.value = data;
-    };
+        setInputDate("#dateDefault");
+    </script>
 
-    setInputDate("#dateDefault");
-</script>
 </body>
 </html>
