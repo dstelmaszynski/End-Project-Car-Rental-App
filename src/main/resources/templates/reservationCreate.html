@@ -102,7 +102,7 @@
         <tbody>
 
         <tr  th:each="car : ${carList}">
-            <td><input type="radio" id="carId" name="optradio" value="${car.carMileage}" checked></td>
+            <td><input type="radio"  name="optradio" th:field="*{selectedCar}" th:value="${car}" checked></td>
             <td th:text="${car.carBrand}" />
             <td th:text="${car.carModel}"/>
             <td th:text="${car.carType}"/>

@@ -12,6 +12,15 @@ public class ReservationDto {
     private Integer clientId;
     private Integer carId;
     private Integer reservationCost;
+    private CarDto selectedCar;
+
+    public CarDto getSelectedCar() {
+        return selectedCar;
+    }
+
+    public void setSelectedCar(CarDto selectedCar) {
+        this.selectedCar = selectedCar;
+    }
 
     public String getReservationCreateDate() {
         return reservationCreateDate;

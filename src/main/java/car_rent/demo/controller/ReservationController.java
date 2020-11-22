@@ -44,21 +44,19 @@ public class ReservationController {
     public String reservationCreate (@ModelAttribute("reservation") ReservationDto reservationDto) {
 
         reservationService.createReservation(reservationDto);
-        return "redirect:/reservation";
+        return "redirect:/reservation/add/booking?reservationDateStart="+reservationDto.getReservationDateStart()+"&reservationDateEnd="+reservationDto.getReservationDateEnd();
     }
 
-//    @RequestMapping(value = "/reservation/booking", method = RequestMethod.GET)
-//    //request param podajesz pola do przesyłu http
-//    public String reservationBooking (Model model, @RequestParam String startDate, @RequestParam String endDate) {
-//        ReservationDto reservation = new ReservationDto();
-//        //zdefiniowanie tych pól, setery na pobranie z http
-//        reservation.setReservationDateStart(startDate);
-//        reservation.setReservationDateEnd(endDate);
-//        List<CarDto> dtos = carService.getAll();
-//        model.addAttribute("reservation", reservation);
-//        model.addAttribute("carList", dtos);
-//
-//        return "reservationBooking";
-//    }
+    @RequestMapping(value = "/reservation/add/booking", method = RequestMethod.GET)
+    //request param podajesz pola do przesyłu http
+    public String reservationBooking (Model model, @RequestParam String reservationDateStart, @RequestParam String reservationDateEnd) {
+        ReservationDto reservation2 = new ReservationDto();
+        //zdefiniowanie tych pól, setery na pobranie z http
+        reservation2.setReservationDateStart(reservationDateStart);
+        reservation2.setReservationDateEnd(reservationDateEnd);
+        model.addAttribute("reservation", reservation2);
+
+        return "reservationBooking";
+    }
 
 }
