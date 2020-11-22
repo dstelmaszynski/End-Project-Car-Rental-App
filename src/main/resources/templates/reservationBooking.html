@@ -46,7 +46,7 @@
 </nav>
 
 <div class="container mt-4">
-    <h1>Rezerwacja</h1>
+    <h1>Booking</h1>
     <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
 
         <div>
@@ -83,65 +83,5 @@
 
 </div>
 
-<div class="container mt-4">
-    <h1>Lista samochodów</h1>
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">Wybierz</th>
-            <th scope="col">Marka</th>
-            <th scope="col">Model</th>
-            <th scope="col">Typ</th>
-            <th scope="col">Rok produkcji</th>
-            <th scope="col">Kolor</th>
-            <th scope="col">Przebieg [km]</th>
-            <th scope="col">Status</th>
-            <th scope="col">Cena za dzień [PLN]</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr  th:each="car : ${carList}">
-            <td><input type="radio" id="carId" name="optradio" value="${car.carMileage}" checked></td>
-            <td th:text="${car.carBrand}" />
-            <td th:text="${car.carModel}"/>
-            <td th:text="${car.carType}"/>
-            <td th:text="${car.carProductionYear}"/>
-            <td th:text="${car.carColor}"/>
-            <td th:text="${car.carMileage}"/>
-            <td th:text="${car.status}"/>
-            <td th:text="${car.perDayCost}"/>
-        </tr>
-        </tbody>
-    </table>
-</div>
-    <!-- aktualna data rezerwacji-->
-    <script>
-        function setInputDate(_id) {
-            var _dat = document.querySelector(_id);
-            var hoy = new Date(),
-                d = hoy.getDate(),
-                m = hoy.getMonth() + 1,
-                y = hoy.getFullYear(),
-                data;
-
-            if (d < 10) {
-                d = "0" + d;
-            }
-            ;
-            if (m < 10) {
-                m = "0" + m;
-            }
-            ;
-
-            data = y + "-" + m + "-" + d;
-            console.log(data);
-            _dat.value = data;
-        };
-
-        setInputDate("#dateDefault");
-    </script>
-
 </body>
 </html>
-<!--//TODO ID samochodu do wyświetlania-->

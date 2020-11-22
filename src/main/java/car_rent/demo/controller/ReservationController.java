@@ -47,5 +47,18 @@ public class ReservationController {
         return "redirect:/reservation";
     }
 
+//    @RequestMapping(value = "/reservation/booking", method = RequestMethod.GET)
+//    //request param podajesz pola do przesyłu http
+//    public String reservationBooking (Model model, @RequestParam String startDate, @RequestParam String endDate) {
+//        ReservationDto reservation = new ReservationDto();
+//        //zdefiniowanie tych pól, setery na pobranie z http
+//        reservation.setReservationDateStart(startDate);
+//        reservation.setReservationDateEnd(endDate);
+//        List<CarDto> dtos = carService.getAll();
+//        model.addAttribute("reservation", reservation);
+//        model.addAttribute("carList", dtos);
+//
+//        return "reservationBooking";
+//    }
 
 }
