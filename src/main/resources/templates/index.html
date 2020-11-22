@@ -4,8 +4,6 @@
     <meta charset="UTF-8"/>
     <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
 
-    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}"/>
-    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}"/>
     <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
     <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
@@ -15,7 +13,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a class="navbar-brand" href="/">WYPOŻYCZALNIA SAMOCHODÓW</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,7 +29,13 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" th:href="@{/reservation}">Rezerwacje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/client}">Klienci</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/car}">Auta</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -40,36 +45,60 @@
     </div>
 </nav>
 
-<div class="container">
-    <form method="post" th:object="${user}">
-        <div class="form-group row">
-            <div class="col-md-4 mt-5">
-                <label for="birthdate">Date of birth</label>
-                <div class="input-group date">
-                    <input type="Date" class="form-control" id="birthdate" autocomplete="off" th:field="*{birtdate}"/>
-                    <div class="input-group-append">
-                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+<div class="container mt-4">
+    <h1>Szukaj auta</h1>
+    <!--/*@thymesVar id="reservation" type="java"*/-->
+    <form  role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <div class="col-md-10 mt-5">
+<!--                    10 rozszerza pole a 5 daje padding-->
+                    <label>Rezerwacja od:</label>
+                    <div class="input-group date">
+                        <input type="Date" class="form-control" name="reservationStartDate"
+                               placeholder="Data rezerwacji"/>
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="col-md-10 mt-5">
+                    <label>Rezerwacja do:</label>
+                    <div class="input-group date">
+                        <input type="Date" class="form-control" name="reservationEndDate"
+                               placeholder="Data rezerwacji"/>
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <div class="col-md-4 mt-4">
+                    <button class="btn btn-primary" type="submit">Szukaj auta</button>
                 </div>
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Submit form</button>
+
     </form>
-
 </div>
-
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{assets/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>
 
 <script>
     $('.input-group.date').datepicker({
         autoclose: true,
         todayHighlight: true,
-        format: "mm/dd/yyyy"
+        format: "yyyy-MM-dd"
     });
 </script>
 

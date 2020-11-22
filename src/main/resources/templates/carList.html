@@ -1,23 +1,73 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Lista samochodów</title>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
 <body>
-<h1>Lista samochodów</h1>
-<table>
-    <tr th:each="car : ${carList}">
-        <td th:text="${car.carBrand}" />
-        <td th:text="${car.carModel}" />
-        <td th:text="${car.carType}" />
-        <td th:text="${car.carProductionYear}" />
-        <td th:text="${car.carColor}" />
-        <td th:text="${car.carMileage}" />
-        <td th:text="${car.status}" />
-        <td th:text="${car.perDayCost}" />
-    </tr>
-</table>
 
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">WYPOŻYCZALNIA SAMOCHODÓW</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <h1>Lista samochodów</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Marka</th>
+            <th scope="col">Model</th>
+            <th scope="col">Typ</th>
+            <th scope="col">Rok produkcji</th>
+            <th scope="col">Kolor</th>
+            <th scope="col">Przebieg [km]</th>
+            <th scope="col">Status</th>
+            <th scope="col">Cena za dzień [PLN]</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${carList}">
+            <td th:text="${car.carBrand}"/>
+            <td th:text="${car.carModel}"/>
+            <td th:text="${car.carType}"/>
+            <td th:text="${car.carProductionYear}"/>
+            <td th:text="${car.carColor}"/>
+            <td th:text="${car.carMileage}"/>
+            <td th:text="${car.status}"/>
+            <td th:text="${car.perDayCost}"/>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
 </body>
 </html>

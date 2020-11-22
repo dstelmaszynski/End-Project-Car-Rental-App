@@ -20,7 +20,7 @@ public class ClientDataLoader implements ApplicationRunner {
         ClientEntity entity = new ClientEntity();
         entity.setClientVorname("Adam");
         entity.setClientSurname("Nowak");
-        entity.setClientAddress("ul.Nowowiejskiego 16, 61-038 Poznań,");
+        entity.setClientAddress("ul.Nowowiejskiego 16, 61-038 Poznań");
         entity.setClientEmail("a_nowak@wp.pl");
 
         clientRepository.save(entity);
@@ -28,7 +28,7 @@ public class ClientDataLoader implements ApplicationRunner {
         ClientEntity entity2 = new ClientEntity();
         entity2.setClientVorname("Patrycja");
         entity2.setClientSurname("Jarząbek");
-        entity2.setClientAddress("ul.Marcinkowskiego 25, 61-015 Poznań,");
+        entity2.setClientAddress("ul.Marcinkowskiego 25, 61-015 Poznań");
         entity2.setClientEmail("pj@o2.pl");
 
         clientRepository.save(entity2);
@@ -36,7 +36,7 @@ public class ClientDataLoader implements ApplicationRunner {
         ClientEntity entity3 = new ClientEntity();
         entity3.setClientVorname("Wiesław");
         entity3.setClientSurname("Dobrejmyśli");
-        entity3.setClientAddress("ul.Podgórna 2, 61-002 Poznań,");
+        entity3.setClientAddress("ul.Podgórna 2, 61-002 Poznań");
         entity3.setClientEmail("dobramysl@wp.pl");
 
         clientRepository.save(entity3);

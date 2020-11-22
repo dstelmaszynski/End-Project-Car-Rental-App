@@ -1,21 +1,69 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Lista rezerwacji</title>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
 <body>
-<h1>Lista rezerwacji</h1>
-<table>
-    <tr th:each="reservation : ${reservationList}">
-        <td th:text="${reservation.reservationCreateDate}" />
-        <td th:text="${reservation.reservationDateStart}" />
-        <td th:text="${reservation.reservationDateEnd}" />
-        <td th:text="${reservation.clientId}" />
-        <td th:text="${reservation.carId}" />
-        <td th:text="${reservation.reservationCost}" />
-    </tr>
-</table>
 
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">WYPOŻYCZALNIA SAMOCHODÓW</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reservationList.html">Rezerwacje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <h1>Lista rezerwacji</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Data rezerwacji</th>
+            <th scope="col">Data rozpoczęcia</th>
+            <th scope="col">Data zakończenia</th>
+            <th scope="col">ID klienta</th>
+            <th scope="col">ID samochodu</th>
+            <th scope="col">Całkowity koszt [PLN]</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reservation : ${reservationList}">
+            <td th:text="${reservation.reservationCreateDate}"/>
+            <td th:text="${reservation.reservationDateStart}"/>
+            <td th:text="${reservation.reservationDateEnd}"/>
+            <td th:text="${reservation.clientId}"/>
+            <td th:text="${reservation.carId}"/>
+            <td th:text="${reservation.reservationCost}"/>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
 </body>
 </html>
