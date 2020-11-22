@@ -16,7 +16,7 @@ public class ReservationEntity {
     @NotNull
     private Integer reservationId;
 
-//    @Temporal(TemporalType.DATE)
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date reservationCreateDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -34,6 +34,7 @@ public class ReservationEntity {
     public void setReservationId(Integer reservationId) {
         this.reservationId = reservationId;
     }
+
 
     public Date getReservationCreateDate() {
         return reservationCreateDate;

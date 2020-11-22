@@ -15,7 +15,8 @@ import lombok.Setter;
 public class User {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date birtdate;
-
+    public Date startDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    public Date endDate;
 
 }

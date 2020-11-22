@@ -10,14 +10,16 @@
 <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
 
     <div>
-        <input type="date" name="reservationCreateDate" placeholder="Data rezerwacji" />
+        <input type="date" id="dateDefault" name="reservationCreateDate" placeholder="Data rezerwacji" />
     </div>
 
     <div>
-        <input type="date" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" />
+        <input type="date" name="reservationDateStart" th:value="${reservation.reservationDateStart}"  placeholder="Data rozpoczęcia rezerwacji"  />
+
     </div>
+
     <div>
-        <input type="date" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" />
+        <input type="date" name="reservationDateEnd"  th:value="${reservation.reservationDateEnd}" placeholder="Data zakończenia rezerwacji" />
     </div>
 
     <div>
@@ -35,5 +37,30 @@
 
         <input type="submit" value="Zapisz">
 </form>
+
+<!-- aktualna data rezerwacji-->
+<script>
+    function setInputDate(_id){
+        var _dat = document.querySelector(_id);
+        var hoy = new Date(),
+            d = hoy.getDate(),
+            m = hoy.getMonth()+1,
+            y = hoy.getFullYear(),
+            data;
+
+        if(d < 10){
+            d = "0"+d;
+        };
+        if(m < 10){
+            m = "0"+m;
+        };
+
+        data = y+"-"+m+"-"+d;
+        console.log(data);
+        _dat.value = data;
+    };
+
+    setInputDate("#dateDefault");
+</script>
 </body>
 </html>

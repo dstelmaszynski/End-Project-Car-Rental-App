@@ -48,7 +48,7 @@
 <div class="container mt-4">
     <h1>Szukaj auta</h1>
     <!--/*@thymesVar id="reservation" type="java"*/-->
-    <form  role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
+    <form  role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="get">
 
         <div class="form-row">
             <div class="form-group col-md-4">
@@ -56,7 +56,7 @@
 <!--                    10 rozszerza pole a 5 daje padding-->
                     <label>Rezerwacja od:</label>
                     <div class="input-group date">
-                        <input type="Date" class="form-control" name="reservationStartDate"
+                     <input type="Date" class="form-control" name="startDate" th:field="*{startDate}"
                                placeholder="Data rezerwacji"/>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
@@ -68,7 +68,7 @@
                 <div class="col-md-10 mt-5">
                     <label>Rezerwacja do:</label>
                     <div class="input-group date">
-                        <input type="Date" class="form-control" name="reservationEndDate"
+                        <input type="Date" class="form-control" name="endDate" th:field="*{endDate}"
                                placeholder="Data rezerwacji"/>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>

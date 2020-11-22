@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -24,9 +25,11 @@ public class ReservationController {
         return "reservationList";
     }
     @RequestMapping(value = "/reservation/add", method = RequestMethod.GET)
-    public String reservationCreate (Model model) {
+    public String reservationCreate (Model model, @RequestParam String startDate, @RequestParam String endDate) {
        ReservationDto reservation = new ReservationDto();
-        model.addAttribute("reservation", reservation);
+       reservation.setReservationDateStart(startDate);
+       reservation.setReservationDateEnd(endDate);
+       model.addAttribute("reservation", reservation);
         return "reservationCreate";
 }
     @RequestMapping(value = "/reservation/add", method = RequestMethod.POST)
