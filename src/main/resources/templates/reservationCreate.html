@@ -4,8 +4,8 @@
     <meta charset="UTF-8"/>
     <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
 
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
 <body>
 
@@ -81,7 +81,37 @@
         <input type="submit" value="Zapisz">
     </form>
 
+</div>
 
+<div class="container mt-4">
+    <h1>Lista samochodów</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Marka</th>
+            <th scope="col">Model</th>
+            <th scope="col">Typ</th>
+            <th scope="col">Rok produkcji</th>
+            <th scope="col">Kolor</th>
+            <th scope="col">Przebieg [km]</th>
+            <th scope="col">Status</th>
+            <th scope="col">Cena za dzień [PLN]</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr  th:each="car : ${carList}">
+            <td th:text="${car.carBrand}"/>
+            <td th:text="${car.carModel}"/>
+            <td th:text="${car.carType}"/>
+            <td th:text="${car.carProductionYear}"/>
+            <td th:text="${car.carColor}"/>
+            <td th:text="${car.carMileage}"/>
+            <td th:text="${car.status}"/>
+            <td th:text="${car.perDayCost}"/>
+        </tr>
+        </tbody>
+    </table>
 </div>
     <!-- aktualna data rezerwacji-->
     <script>
