@@ -88,6 +88,7 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
+            <th scope="col">Wybierz</th>
             <th scope="col">Marka</th>
             <th scope="col">Model</th>
             <th scope="col">Typ</th>
@@ -101,7 +102,8 @@
         <tbody>
 
         <tr  th:each="car : ${carList}">
-            <td th:text="${car.carBrand}"/>
+            <td><input type="radio" name="optradio" checked></td>
+            <td th:text="${car.carBrand}" />
             <td th:text="${car.carModel}"/>
             <td th:text="${car.carType}"/>
             <td th:text="${car.carProductionYear}"/>
