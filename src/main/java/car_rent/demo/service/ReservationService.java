@@ -46,7 +46,7 @@ public class ReservationService {
             Instant instantEndDate = entity.getReservationDateEnd().toInstant();
 
             long daysBetween = DAYS.between(instantStartDate,instantEndDate);
-            long result = daysBetween*entity.getCar(car.getPerDayCost());
+            long result = daysBetween*entity.getCar().getPerDayCost();
 
             entity.setReservationCost((int) result);
 
