@@ -18,6 +18,12 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
+    @RequestMapping("/")
+    public String login() {
+
+        return "login";
+    }
+
     @RequestMapping(value="/client", method = RequestMethod.GET)
     public String clientList(Model model){
         List<ClientDto> dtos = clientService.getAll();

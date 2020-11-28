@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping({ "/", "/index" })
+@RequestMapping({ "/index" })
 public class IndexController {
 
 

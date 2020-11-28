@@ -2,10 +2,7 @@ package car_rent.demo.entity;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity(name="client")
@@ -18,6 +15,11 @@ public class ClientEntity {
     private String clientSurname;
     private String clientAddress;
     private String clientEmail;
+
+    @Column(nullable=false)
+    private String username;
+    @Column(nullable=false)
+    private String password;
 
     @OneToMany(mappedBy = "client")
     private List<ReservationEntity> reservations;
@@ -60,5 +62,21 @@ public class ClientEntity {
 
     public void setClientEmail(String clientEmail) {
         this.clientEmail = clientEmail;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
