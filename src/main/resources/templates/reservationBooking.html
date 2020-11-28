@@ -47,7 +47,7 @@
 
 <div class="container mt-4">
     <h1>Booking</h1>
-    <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
+    <form role="form" th:object="${reservationSummary}" th:action="@{/reservation/add}" method="post">
 
         <div>
             <input type="date" id="dateDefault" name="reservationCreateDate" placeholder="Data rezerwacji"/>
@@ -55,13 +55,13 @@
 
         <div>
             <!--        podanie th:value czyli wskazanie na odpowiednie pole do przesyłu-->
-            <input type="date" name="reservationDateStart1" th:value="${reservation.reservationDateStart}"
+            <input type="date" name="reservationDateStart1" th:value="${reservationSummary.reservationDateStart}"
                    placeholder="Data rozpoczęcia rezerwacji"/>
 
         </div>
 
         <div>
-            <input type="date" name="reservationDateEnd1" th:value="${reservation.reservationDateEnd}"
+            <input type="date" name="reservationDateEnd1" th:value="${reservationSummary.reservationDateEnd}"
                    placeholder="Data zakończenia rezerwacji"/>
         </div>
 
@@ -70,7 +70,7 @@
         </div>
 
         <div>
-            <input type="text" name="carId" placeholder="Id samochodu" th:value="${reservation.selectedCar}" />
+            <input type="text" name="carId" placeholder="Id samochodu" th:value="${reservationSummary.car.carModel}" />
         </div>
 
         <div>

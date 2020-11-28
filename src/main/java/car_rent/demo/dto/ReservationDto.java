@@ -3,6 +3,7 @@ package car_rent.demo.dto;
 import java.util.Date;
 
 public class ReservationDto {
+    private long id;
     //typ zmieniony z Date na String
     private String reservationCreateDate;
     //typ zmieniony z Date na String
@@ -12,13 +13,21 @@ public class ReservationDto {
     private Integer clientId;
     private Integer carId;
     private Integer reservationCost;
-    private CarDto selectedCar;
+    private long selectedCar;
 
-    public CarDto getSelectedCar() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getSelectedCar() {
         return selectedCar;
     }
 
-    public void setSelectedCar(CarDto selectedCar) {
+    public void setSelectedCar(long selectedCar) {
         this.selectedCar = selectedCar;
     }
 

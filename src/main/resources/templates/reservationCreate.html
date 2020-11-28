@@ -55,26 +55,57 @@
 
         <div>
             <!--        podanie th:value czyli wskazanie na odpowiednie pole do przesyłu-->
-            <input type="date" name="reservationDateStart" th:value="${reservation.reservationDateStart}"
-                   placeholder="Data rozpoczęcia rezerwacji"/>
+            <input type="date" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" th:value="${reservation.reservationDateStart}"/>
 
         </div>
 
         <div>
-            <input type="date" name="reservationDateEnd" th:value="${reservation.reservationDateEnd}"
-                   placeholder="Data zakończenia rezerwacji"/>
+            <input type="date" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" th:value="${reservation.reservationDateEnd}"/>
         </div>
 
         <div>
             <input type="text" name="clientId" placeholder="Id klienta"/>
         </div>
 
-        <div>
-            <input type="text" name="carId" placeholder="Id samochodu" />
-        </div>
+<!--        <div>-->
+<!--            <input type="text" name="carId" placeholder="Id samochodu" />-->
+<!--        </div>-->
 
         <div>
             <input type="text" name="reservationCost" placeholder="Koszt rezerwacji"/>
+        </div>
+
+        <div class="container mt-4">
+            <h1>Lista samochodów</h1>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Wybierz</th>
+                    <th scope="col">Marka</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Typ</th>
+                    <th scope="col">Rok produkcji</th>
+                    <th scope="col">Kolor</th>
+                    <th scope="col">Przebieg [km]</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Cena za dzień [PLN]</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr  th:each="car : ${carList}">
+                    <td><input type="radio"  th:field="*{carId}" th:value="${car.id}"></td>
+                    <td th:text="${car.carBrand}" />
+                    <td th:text="${car.carModel}"/>
+                    <td th:text="${car.carType}"/>
+                    <td th:text="${car.carProductionYear}"/>
+                    <td th:text="${car.carColor}"/>
+                    <td th:text="${car.carMileage}"/>
+                    <td th:text="${car.status}"/>
+                    <td th:text="${car.perDayCost}"/>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
 
@@ -83,38 +114,7 @@
 
 </div>
 
-<div class="container mt-4">
-    <h1>Lista samochodów</h1>
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">Wybierz</th>
-            <th scope="col">Marka</th>
-            <th scope="col">Model</th>
-            <th scope="col">Typ</th>
-            <th scope="col">Rok produkcji</th>
-            <th scope="col">Kolor</th>
-            <th scope="col">Przebieg [km]</th>
-            <th scope="col">Status</th>
-            <th scope="col">Cena za dzień [PLN]</th>
-        </tr>
-        </thead>
-        <tbody>
 
-        <tr  th:each="car : ${carList}">
-            <td><input type="radio"  th:field="${reservation.selectedCar}" th:name="selectedAuto" th:value="${car.carMileage}" checked></td>
-            <td th:text="${car.carBrand}" />
-            <td th:text="${car.carModel}"/>
-            <td th:text="${car.carType}"/>
-            <td th:text="${car.carProductionYear}"/>
-            <td th:text="${car.carColor}"/>
-            <td th:text="${car.carMileage}"/>
-            <td th:text="${car.status}"/>
-            <td th:text="${car.perDayCost}"/>
-        </tr>
-        </tbody>
-    </table>
-</div>
     <!-- aktualna data rezerwacji-->
     <script>
         function setInputDate(_id) {

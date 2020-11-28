@@ -13,6 +13,7 @@ import java.util.List;
 public class ReservationMapper {
     public static ReservationDto mapResToDto(ReservationEntity entity) {
         ReservationDto dto = new ReservationDto();
+        dto.setId(entity.getReservationId());
         dto.setReservationCost(entity.getReservationCost());
         dto.setReservationCreateDate(new SimpleDateFormat("yyyy-MM-dd").format(entity.getReservationCreateDate()));
         //pattern musi być dd-MM-yyyy, szczególnie chodzi o MM, muszą być z dużych liter inaczej nie będzie działać
@@ -23,8 +24,8 @@ public class ReservationMapper {
 
         dto.setReservationDateEnd(new SimpleDateFormat("yyyy-MM-dd").format(entity.getReservationDateEnd()));
 //        dto.setReservationDateEnd(entity.getReservationDateEnd());
-        dto.setClientId(entity.getClientId());
-        dto.setCarId(entity.getCarId());
+//        dto.setClientId(entity.get());
+
 
 
         return dto;
@@ -57,8 +58,7 @@ public class ReservationMapper {
 
         entity.setReservationDateEnd(new SimpleDateFormat("yyyy-MM-dd").parse(dto.getReservationDateEnd()));
 //        entity.setReservationDateEnd(dto.getReservationDateEnd());
-        entity.setClientId(dto.getClientId());
-        entity.setCarId(dto.getCarId());
+//        entity.setClientId(dto.getClientId());
 
         return entity;
     }

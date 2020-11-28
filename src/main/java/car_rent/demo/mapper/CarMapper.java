@@ -12,6 +12,7 @@ public class CarMapper {
 
     public static CarDto mapEntityToDto(CarEntity entity){
         CarDto dto = new CarDto();
+        dto.setId(entity.getId());
         dto.setCarBrand(entity.getCarBrand());
         dto.setStatus(entity.getStatus());
         dto.setPerDayCost(entity.getPerDayCost());

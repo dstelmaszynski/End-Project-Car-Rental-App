@@ -3,6 +3,7 @@ package car_rent.demo.controller;
 
 import car_rent.demo.dto.CarDto;
 import car_rent.demo.dto.ReservationDto;
+import car_rent.demo.dto.ReservationSummaryDto;
 import car_rent.demo.service.CarService;
 import car_rent.demo.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,19 +44,19 @@ public class ReservationController {
     @RequestMapping(value = "/reservation/add", method = RequestMethod.POST)
     public String reservationCreate (@ModelAttribute("reservation") ReservationDto reservationDto) {
 
-        reservationService.createReservation(reservationDto);
-        return "redirect:/reservation/add/booking?reservationDateStart="+reservationDto.getReservationDateStart()+"&reservationDateEnd="+reservationDto.getReservationDateEnd()+"&selectedAuto="+reservationDto.getSelectedCar();
+        ReservationDto createdReservationDto = reservationService.createReservation(reservationDto);
+        return "redirect:/reservation/add/booking?reservationId="+createdReservationDto.getId();
     }
 
     @RequestMapping(value = "/reservation/add/booking", method = RequestMethod.GET)
     //request param podajesz pola do przesyłu http
-    public String reservationBooking (Model model, @RequestParam String reservationDateStart, @RequestParam String reservationDateEnd, @RequestParam Integer selectedAuto) {
-        ReservationDto reservation2 = new ReservationDto();
+    public String reservationBooking (Model model, @RequestParam int reservationId) {
+        ReservationSummaryDto reservationSummaryDto = reservationService.getByReservationId(reservationId);
         //zdefiniowanie tych pól, setery na pobranie z http
-        reservation2.setReservationDateStart(reservationDateStart);
-        reservation2.setReservationDateEnd(reservationDateEnd);
-        reservation2.setCarId(selectedAuto);
-        model.addAttribute("reservation", reservation2);
+//        reservation2.setReservationDateStart(reservationDateStart);
+//        reservation2.setReservationDateEnd(reservationDateEnd);
+//        reservation2.setCarId(selectedAuto);
+        model.addAttribute("reservationSummary", reservationSummaryDto);
 
         return "reservationBooking";
     }

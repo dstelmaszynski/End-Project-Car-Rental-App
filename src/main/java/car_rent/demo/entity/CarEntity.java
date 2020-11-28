@@ -3,6 +3,8 @@ import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity (name="car")
 public class CarEntity {
@@ -19,6 +21,9 @@ public class CarEntity {
     private Integer carMileage;
     private String status;
     private Integer perDayCost;
+
+    @OneToMany(mappedBy = "car")
+    private List<ReservationEntity> reservations;
 
     public Integer getId() {
         return id;

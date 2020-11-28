@@ -23,8 +23,15 @@ public class ReservationEntity {
     private Date reservationDateStart;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date reservationDateEnd;
-    private Integer clientId;
-    private Integer carId;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private ClientEntity client;
+
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private CarEntity car;
+
     private Integer reservationCost;
 
     public Integer getReservationId() {
@@ -60,20 +67,12 @@ public class ReservationEntity {
         this.reservationDateEnd = reservationDateEnd;
     }
 
-    public Integer getClientId() {
-        return clientId;
+    public ClientEntity getClient() {
+        return client;
     }
 
-    public void setClientId(Integer clientId) {
-        this.clientId = clientId;
-    }
-
-    public Integer getCarId() {
-        return carId;
-    }
-
-    public void setCarId(Integer carId) {
-        this.carId = carId;
+    public void setClient(ClientEntity client) {
+        this.client = client;
     }
 
     public Integer getReservationCost() {
@@ -82,5 +81,13 @@ public class ReservationEntity {
 
     public void setReservationCost(Integer reservationCost) {
         this.reservationCost = reservationCost;
+    }
+
+    public CarEntity getCar() {
+        return car;
+    }
+
+    public void setCar(CarEntity car) {
+        this.car = car;
     }
 }

@@ -13,6 +13,11 @@ import java.util.List;
 public class ClientMapper {
 
     public static ClientDto mapClientToDto(ClientEntity entity){
+
+        if (entity == null) {
+            return null;
+        }
+
         ClientDto dto = new ClientDto();
         dto.setClientVorname(entity.getClientVorname());
         dto.setClientSurname(entity.getClientSurname());

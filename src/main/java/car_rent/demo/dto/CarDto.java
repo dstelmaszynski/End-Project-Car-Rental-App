@@ -2,6 +2,7 @@ package car_rent.demo.dto;
 
 //to co przesyłamy między entity a uzytkownikiem
 public class CarDto {
+    private int id;
     private String carBrand;
     private String carModel;
     private String carType;
@@ -10,6 +11,14 @@ public class CarDto {
     private Integer carMileage;
     private String status;
     private Integer perDayCost;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCarBrand() {
         return carBrand;

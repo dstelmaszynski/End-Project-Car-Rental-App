@@ -5,6 +5,8 @@ import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity(name="client")
 public class ClientEntity {
@@ -16,6 +18,9 @@ public class ClientEntity {
     private String clientSurname;
     private String clientAddress;
     private String clientEmail;
+
+    @OneToMany(mappedBy = "client")
+    private List<ReservationEntity> reservations;
 
     public Integer getClientId() {
         return clientId;
