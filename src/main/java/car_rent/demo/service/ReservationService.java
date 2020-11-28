@@ -13,8 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 @Service
 public class ReservationService {
@@ -38,7 +42,13 @@ public class ReservationService {
             ReservationEntity entity = ReservationMapper.mapDtoToRes(dto);
             entity.setCar(car);
 
-            // TODO: oblicz koszt rezerwacji
+            Instant instantStartDate = entity.getReservationDateStart().toInstant();
+            Instant instantEndDate = entity.getReservationDateEnd().toInstant();
+
+            long daysBetween = DAYS.between(instantStartDate,instantEndDate);
+            long result = daysBetween*entity.getCar(car.getPerDayCost());
+
+            entity.setReservationCost((int) result);
 
             //dodanie nowej daty
             entity.setReservationCreateDate(new Date());

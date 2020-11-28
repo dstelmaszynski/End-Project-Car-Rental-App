@@ -50,30 +50,34 @@
     <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
 
         <div>
+            <label> Data rezerwacji</label>
             <input type="date" id="dateDefault" name="reservationCreateDate" placeholder="Data rezerwacji"/>
+
         </div>
 
         <div>
             <!--        podanie th:value czyli wskazanie na odpowiednie pole do przesyłu-->
+            <label> Data rozpoczęcia rezerwacji</label>
             <input type="date" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" th:value="${reservation.reservationDateStart}"/>
 
         </div>
 
         <div>
+            <label> Data zakończenia rezerwacji</label>
             <input type="date" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" th:value="${reservation.reservationDateEnd}"/>
         </div>
 
-        <div>
-            <input type="text" name="clientId" placeholder="Id klienta"/>
-        </div>
+<!--        <div>-->
+<!--            <input type="text" name="clientId" placeholder="Id klienta"/>-->
+<!--        </div>-->
 
 <!--        <div>-->
 <!--            <input type="text" name="carId" placeholder="Id samochodu" />-->
 <!--        </div>-->
 
-        <div>
-            <input type="text" name="reservationCost" placeholder="Koszt rezerwacji"/>
-        </div>
+<!--        <div>-->
+<!--            <input type="text" name="reservationCost" placeholder="Koszt rezerwacji"/>-->
+<!--        </div>-->
 
         <div class="container mt-4">
             <h1>Lista samochodów</h1>
