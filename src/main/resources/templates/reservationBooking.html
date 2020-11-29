@@ -102,9 +102,9 @@
 
 
             <div class="col-md-4" >
-                <label>Numer samochodu:</label>
+                <label>Wybrany samochód:</label>
                 <div class="input-group date">
-                    <input class="form-control" type="text" name="carId" placeholder="Id samochodu" th:value="${reservationSummary.car.id}" disabled/>
+                    <input class="form-control" type="text" placeholder="Id samochodu" th:value="${reservationSummary.car.carBrand +' '+ reservationSummary.car.carModel}" disabled/>
 
                 </div>
             </div>
