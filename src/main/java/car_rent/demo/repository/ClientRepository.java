@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface ClientRepository extends CrudRepository<ClientEntity,Integer> {
 
     ClientEntity findByUsername(String username);
-//    ClientEntity getByClientId(Integer id);
+    ClientEntity getByClientId(Integer id);
 }

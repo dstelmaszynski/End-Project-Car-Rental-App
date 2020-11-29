@@ -25,7 +25,9 @@ public class ReservationMapper {
         dto.setReservationDateEnd(new SimpleDateFormat("yyyy-MM-dd").format(entity.getReservationDateEnd()));
 //        dto.setReservationDateEnd(entity.getReservationDateEnd());
 //        dto.setClientId(entity.get());
+        dto.setCarId(entity.getCar().getId());
 
+        dto.setClientId(entity.getClient().getClientId());
 
 
         return dto;

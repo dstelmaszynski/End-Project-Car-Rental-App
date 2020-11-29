@@ -3,13 +3,18 @@ package car_rent.demo.service;
 import car_rent.demo.dto.ReservationDto;
 import car_rent.demo.dto.ReservationSummaryDto;
 import car_rent.demo.entity.CarEntity;
+import car_rent.demo.entity.ClientEntity;
 import car_rent.demo.entity.ReservationEntity;
 import car_rent.demo.mapper.CarMapper;
 import car_rent.demo.mapper.ClientMapper;
 import car_rent.demo.mapper.ReservationMapper;
 import car_rent.demo.repository.CarRepository;
+import car_rent.demo.repository.ClientRepository;
 import car_rent.demo.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -28,6 +33,9 @@ public class ReservationService {
     @Autowired
     private CarRepository carRepository;
 
+    @Autowired
+    private ClientRepository clientRepository;
+
     public List<ReservationDto> getAll(){
         Iterable<ReservationEntity> entities = reservationRepository.findAll();
         List<ReservationDto> dtos = ReservationMapper.mapResListToDtoList(entities);
@@ -39,8 +47,20 @@ public class ReservationService {
         try {
             CarEntity car = carRepository.getById(dto.getCarId());
 
+            //klasa wyciągająca username
+            String username;
+            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal(); //user details
+            if (principal instanceof UserDetails){
+                username = ((UserDetails)principal).getUsername();
+            } else{
+                username = principal.toString();
+            }
+
+            ClientEntity client = clientRepository.findByUsername(username);
+
             ReservationEntity entity = ReservationMapper.mapDtoToRes(dto);
             entity.setCar(car);
+            entity.setClient(client);
 
             Instant instantStartDate = entity.getReservationDateStart().toInstant();
             Instant instantEndDate = entity.getReservationDateEnd().toInstant();
