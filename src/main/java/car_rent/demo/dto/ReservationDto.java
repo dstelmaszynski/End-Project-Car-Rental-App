@@ -13,7 +13,7 @@ public class ReservationDto {
     private Integer clientId;
     private Integer carId;
     private Integer reservationCost;
-    private long selectedCar;
+//    private long selectedCar;
 
     public long getId() {
         return id;
@@ -23,13 +23,13 @@ public class ReservationDto {
         this.id = id;
     }
 
-    public long getSelectedCar() {
-        return selectedCar;
-    }
-
-    public void setSelectedCar(long selectedCar) {
-        this.selectedCar = selectedCar;
-    }
+//    public long getSelectedCar() {
+//        return selectedCar;
+//    }
+//
+//    public void setSelectedCar(long selectedCar) {
+//        this.selectedCar = selectedCar;
+//    }
 
     public String getReservationCreateDate() {
         return reservationCreateDate;

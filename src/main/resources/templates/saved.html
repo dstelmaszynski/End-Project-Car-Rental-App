@@ -1,20 +1,20 @@
-<!--//skopiowane z www-->
-
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
 
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Input Date</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        <a class="navbar-brand" href="/">WYPOŻYCZALNIA SAMOCHODÓW</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +29,13 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" th:href="@{/reservation}">Rezerwacje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/client}">Klienci</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/car}">Auta</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -38,11 +44,18 @@
         </div>
     </div>
 </nav>
+<div class="container mt-5">
+    <div class="col-md-12 text-center">
+        <h2>Dziękujemy za dokonanie rezerwacji i zapraszamy ponownie</h2>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <div class="align-items-center col-md-3 mt-3">
+            <a class="navbar-brand" href="/index">
+            <input class="btn btn-block mybtn btn-primary tx-tfm"   value="Powrót na stronę główną">
+            </a>
+        </div>
+    </div>
 
-<div class="container">
-    <h2 class="mt-5">Your date of birth: <strong th:text="${#dates.format(user.birtdate, 'yyyy-MM-dd')}" ></strong></h2>
-
-    <a th:href="@{/}" class="btn btn-primary">Go back</a>
 </div>
 
 </body>

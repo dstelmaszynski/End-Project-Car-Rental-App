@@ -56,9 +56,18 @@ public class ReservationController {
 //        reservation2.setReservationDateStart(reservationDateStart);
 //        reservation2.setReservationDateEnd(reservationDateEnd);
 //        reservation2.setCarId(selectedAuto);
+
         model.addAttribute("reservationSummary", reservationSummaryDto);
 
         return "reservationBooking";
     }
+
+    @RequestMapping(value = "/reservation/add/booking", method = RequestMethod.POST)
+    public String reservationList2(Model model) {
+
+        return "saved";
+    }
+
+
 
 }

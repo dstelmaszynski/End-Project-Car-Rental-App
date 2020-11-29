@@ -18,11 +18,13 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping("/")
+    @RequestMapping({"/","/login"})
     public String login() {
 
         return "login";
     }
+
+
 
     @RequestMapping(value="/client", method = RequestMethod.GET)
     public String clientList(Model model){

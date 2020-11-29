@@ -47,8 +47,9 @@ public class ReservationService {
 
             long daysBetween = DAYS.between(instantStartDate,instantEndDate);
             long result = daysBetween*entity.getCar().getPerDayCost();
-
             entity.setReservationCost((int) result);
+
+
 
             //dodanie nowej daty
             entity.setReservationCreateDate(new Date());

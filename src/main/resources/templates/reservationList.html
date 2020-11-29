@@ -4,8 +4,8 @@
     <meta charset="UTF-8"/>
     <title>Spring Boot Thymeleaf Application - Bootstrap Input Date</title>
 
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>
 </head>
 <body>
 
@@ -59,7 +59,7 @@
             <td th:text="${reservation.reservationDateStart}"/>
             <td th:text="${reservation.reservationDateEnd}"/>
             <td th:text="${reservation.clientId}"/>
-            <td th:text="${reservation.carId}"/>
+            <td th:text="${reservation.getCarId()}"/>
             <td th:text="${reservation.reservationCost}"/>
         </tr>
         </tbody>

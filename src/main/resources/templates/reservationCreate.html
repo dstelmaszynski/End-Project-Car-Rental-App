@@ -45,27 +45,65 @@
     </div>
 </nav>
 
-<div class="container mt-4">
-    <h1>Rezerwacja</h1>
+<div class="container mt-5">
+
+
     <form role="form" th:object="${reservation}" th:action="@{/reservation/add}" method="post">
 
-        <div>
-            <label> Data rezerwacji</label>
-            <input type="date" id="dateDefault" name="reservationCreateDate" placeholder="Data rezerwacji"/>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+
+            <div class="col-md-4">
+                <!--                    10 rozszerza pole a 5 daje padding-->
+                <label>Data rezerwacji:</label>
+                <div class="input-group date">
+                    <input type="Date" id="dateDefault" class="form-control" name="reservationCreateDate"
+                           placeholder="Data rezerwacji" disabled/>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4" >
+                <label>Rezerwacja od:</label>
+                <div class="input-group date">
+                    <input type="Date" class="form-control" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" th:value="${reservation.reservationDateStart}"/>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" >
+                <label>Rezerwacja do:</label>
+                <div class="input-group date">
+                    <input type="Date" class="form-control" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" th:value="${reservation.reservationDateEnd}"/>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
-        <div>
-            <!--        podanie th:value czyli wskazanie na odpowiednie pole do przesyłu-->
-            <label> Data rozpoczęcia rezerwacji</label>
-            <input type="date" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" th:value="${reservation.reservationDateStart}"/>
+<!--        <div>-->
+<!--            <label> Data rezerwacji</label>-->
+<!--            <input type="date"  name="reservationCreateDate" placeholder="Data rezerwacji"/>-->
 
-        </div>
+<!--        </div>-->
 
-        <div>
-            <label> Data zakończenia rezerwacji</label>
-            <input type="date" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" th:value="${reservation.reservationDateEnd}"/>
-        </div>
+<!--        <div>-->
+<!--            &lt;!&ndash;        podanie th:value czyli wskazanie na odpowiednie pole do przesyłu&ndash;&gt;-->
+<!--            <label> Data rozpoczęcia rezerwacji</label>-->
+<!--            <input type="date" name="reservationDateStart" placeholder="Data rozpoczęcia rezerwacji" th:value="${reservation.reservationDateStart}"/>-->
+
+<!--        </div>-->
+
+<!--        <div>-->
+<!--            <label> Data zakończenia rezerwacji</label>-->
+<!--            <input type="date" name="reservationDateEnd" placeholder="Data zakończenia rezerwacji" th:value="${reservation.reservationDateEnd}"/>-->
+<!--        </div>-->
 
 <!--        <div>-->
 <!--            <input type="text" name="clientId" placeholder="Id klienta"/>-->
@@ -79,8 +117,11 @@
 <!--            <input type="text" name="reservationCost" placeholder="Koszt rezerwacji"/>-->
 <!--        </div>-->
 
-        <div class="container mt-4">
-            <h1>Lista samochodów</h1>
+        <div class="container mt-xl-5">
+            <div class="col-md-12 text-center">
+                <h2>Wybierz samochód</h2>
+            </div>
+    <div class="mt-4">
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
@@ -110,10 +151,16 @@
                 </tr>
                 </tbody>
             </table>
+    </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="align-items-center col-md-3 mt-3">
+
+                    <input class="btn btn-block mybtn btn-primary tx-tfm"  type="submit" value="Zapisz">
+
+                </div>
+            </div>
+
         </div>
-
-
-        <input type="submit" value="Zapisz">
     </form>
 
 </div>
