@@ -8,6 +8,7 @@ import car_rent.demo.entity.ReservationEntity;
 import car_rent.demo.mapper.CarMapper;
 import car_rent.demo.mapper.ClientMapper;
 import car_rent.demo.mapper.ReservationMapper;
+import car_rent.demo.mapper.ReservationSummaryMapper;
 import car_rent.demo.repository.CarRepository;
 import car_rent.demo.repository.ClientRepository;
 import car_rent.demo.repository.ReservationRepository;
@@ -42,6 +43,14 @@ public class ReservationService {
 
         return dtos;
     }
+
+    public List<ReservationSummaryDto> getAllSum(){
+        Iterable<ReservationEntity> entities = reservationRepository.findAll();
+        List<ReservationSummaryDto> dtos = ReservationSummaryMapper.mapResSumListToDtoList(entities);
+
+        return dtos;
+    }
+
 
     public ReservationDto createReservation(ReservationDto dto) {
         try {

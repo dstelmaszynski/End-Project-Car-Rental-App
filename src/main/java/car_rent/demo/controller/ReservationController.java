@@ -26,6 +26,13 @@ public class ReservationController {
         model.addAttribute("reservationList", dtos);
         return "reservationList";
     }
+
+    @RequestMapping(value = "/reservation/sum", method = RequestMethod.GET)
+    public String reservationSumList(Model model) {
+        List<ReservationSummaryDto> dtos = reservationService.getAllSum();
+        model.addAttribute("reservationSumList", dtos);
+        return "reservationSumList";
+    }
     @RequestMapping(value = "/reservation/add", method = RequestMethod.GET)
     //request param podajesz pola do przesyłu http
     public String reservationCreate (Model model, @RequestParam String startDate, @RequestParam String endDate) {
