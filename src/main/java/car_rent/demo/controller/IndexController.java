@@ -25,4 +25,10 @@ public class IndexController {
 
         return "reservationCreate";
     }
+
+    @PostMapping ("/fail_log")
+    public String handleFailedLogin() {
+        System.out.println("Wrong credentials/failed to log");
+        return "/redirect:/index?error";
+    }
 }
