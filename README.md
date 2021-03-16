@@ -15,6 +15,8 @@ Przygotowana w 3-osobowym zespole aplikacja do administrowania działalnością 
   
   Autorzy projektu: Artur R., Michał S., Dominik S.
   
+  Aplikacja dostępna pod adresem: https://car-rental-project-sda.herokuapp.com/
+  
   
   ****************************************************************************************************************************************
 
@@ -31,4 +33,7 @@ Przygotowana w 3-osobowym zespole aplikacja do administrowania działalnością 
     Select "Potwierdzam"
     
   After saving, the reservation will be visible in the "Rezerwacje" section - available in the upper menu
+  
   Authors of the project: Artur R., Michał S., Dominik S.
+  
+  App availible on: https://car-rental-project-sda.herokuapp.com/
