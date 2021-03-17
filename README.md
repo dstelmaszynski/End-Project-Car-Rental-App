@@ -1,15 +1,15 @@
 # End-Project-Car-Rental-App
 
 Przygotowana w 3-osobowym zespole aplikacja do administrowania działalnością wypożyczalni samochodów. Podstawowe fukcje:
-- możliwość zalogowania
-    login: Test1
-    hasło: test1
-- wybór daty wypożyczenia
-    należy kliknąć w ikonę kalendarza w sekcji "Rezerwacja od" oraz "Rezerwacja do", później "Szukaj auta"
-- wybór samochodu
-    W kolumnie "Wybierz" - zaznaczyć dostępny samochód oraz wybrać "Zapisz"
-- potwierdzenie rezerwacji
-    Wybierz "Potwierdzam"
+1. możliwość zalogowania
+- login: Test1
+- hasło: test1
+2. Wybór daty wypożyczenia
+- należy kliknąć w ikonę kalendarza w sekcji "Rezerwacja od" oraz "Rezerwacja do", później "Szukaj auta"
+3. wybór samochodu
+- W kolumnie "Wybierz" - zaznaczyć dostępny samochód oraz wybrać "Zapisz"
+4. potwierdzenie rezerwacji
+- Wybierz "Potwierdzam"
     
   Po zapisaniu rezerwacja będzie widoczna w sekcji "Rezerwacje" - dostępnej w górnym menu
   
@@ -22,15 +22,15 @@ Przygotowana w 3-osobowym zespole aplikacja do administrowania działalnością 
 
   
   Prepared in a 3 people team application to administer the activities of a car rental company. Basic functions:
-- possibility to log in
-    login: Test1
-    password: test1
-- selection of rental date
-    click the calendar icon in the "Rezerwacja od" (start of booking) and "Rezerwacja do" (end of booking) sections, then "Szukaj auta"
-- car selection
-    In the "Wybierz" column, select the available car and click "Zapisz".
-- Confirmation of the reservation
-    Select "Potwierdzam"
+1. Possibility to log in
+- login: Test1
+- password: test1
+2. selection of rental date
+- click the calendar icon in the "Rezerwacja od" (start of booking) and "Rezerwacja do" (end of booking) sections, then "Szukaj auta"
+3. Car selection
+- In the "Wybierz" column, select the available car and click "Zapisz".
+4. Confirmation of the reservation
+- Select "Potwierdzam"
     
   After saving, the reservation will be visible in the "Rezerwacje" section - available in the upper menu
   
